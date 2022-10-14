@@ -1,0 +1,186 @@
+﻿@model List<GlobaxIT.Models.User>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<div class="main-box">
+    <div class="find-box">
+        <input type="text" name="find-inp" id="find-inp" value="" />
+        <label for="find-inp"><img src="~/img/icons/find.png" alt="find icon" /></label>
+    </div>
+    <div class="first-box">
+        @foreach(var item in Model)
+            {
+                <div class="short-box">
+                    <h3>@item.name </h3>
+                    <br /> 
+                    <div class="box-phone">
+                        <img style="margin-right: 10px; margin-top: -1px;" src="~/img/icons/phone.png" alt="Phone icon" />
+                        <p>@item.phone</p>
+                    </div>
+                    <div class="box-email">
+                        <img style="margin-right:10px; margin-top:1px;" src="~/img/icons/email.png" alt="Email icon" />
+                        <a>@item.email</a>
+                    </div>
+                </div>
+            }
+    </div>
+
+    <div class="second-box">
+        <div class="long-box">
+            @foreach (var item in Model)
+            {
+                <div class="hidden-box">
+                    <div class="close-btn">x</div>
+                    <h2>@item.name</h2>
+                    <div class="box-info">
+                        <label>Телефон:</label>
+                        <p>@item.phone</p>
+                    </div>
+                    <div class="box-info">
+                        <label>Почта:</label>
+                        <p>@item.email</p>
+                    </div>
+                    <div class="box-info">
+                        <label>Дата приема:</label>
+                        <p>@item.hire_date</p>
+                    </div>
+                    <div class="box-info">
+                        <label>Должность:</label>
+                        <p>@item.position_name</p>
+                    </div>
+                    <div class="box-info">
+                        <label>Подрозделение:</label>
+                        <p>@item.department</p>
+                    </div>
+                    <div class="box-append">
+                        <label>Дополнительная информация:</label>
+                        <p></p>
+                    </div>
+
+                </div>
+
+            }
+        </div>
+
+    </div>
+</div>
+<style>
+    .box-info{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:flex-start;
+    }
+    a:visited {
+        text-decoration: none;
+        color: #800080;
+        border-bottom-color: rgba(128, 0, 128, 0.2);
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: #cf0000;
+        border-bottom-color: rgba(208, 64, 0, 0.2);
+    }
+    a {
+        text-decoration: none;
+        color: #0f7afc;
+        border-bottom: 1px solid;
+        border-bottom-color: rgba(15, 122, 252, 0.2);
+    }
+    #find-inp {
+        border-radius: 10px;
+        border: 1px solid black;
+        width: 55%;
+        text-align: center;
+    }
+  .find-box{
+      margin-left:30%;
+  }
+
+    .first-box{
+        display:flex;
+        justify-content:space-around;
+        flex-wrap:wrap;
+        flex-direction:row;
+    }
+
+    .box-phone, .box-email {
+        display: flex;
+        flex-direction: row;
+        color:#808080;
+    }
+    .short-box {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 10px;
+        margin: 20px;
+        border-radius: 10px;
+    }
+    img{
+        width:20px;
+        height:20px;
+    }
+    .close-btn {
+        font-size:25px;
+        color:white;
+        border-radius:30px;
+        width: 40px;
+        height: 40px;
+        
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: #d852ff;
+        cursor: pointer;
+    }
+    .hidden-box {
+        display: none;
+        width: 100%;
+        max-width: 500px;
+
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 30; 
+        box-shadow: 0 3px 10px -.5px rgba(0, 0, 0, .2);
+        text-align: center;
+        padding: 30px;
+        border-radius: 3px;
+        background-color: #fff;
+        transition: 0.3s all;
+    }
+    
+    
+</style>
+<script>
+    var boxes = document.getElementsByClassName("short-box");
+    var hiddenBoxes = document.getElementsByClassName("hidden-box");
+    var closeBtn = document.getElementsByClassName("close-btn");
+    const input = document.querySelector('input');
+    const names = document.getElementsByTagName('h2');
+    for (let i = 0; boxes.length; i++) {
+        boxes[i].addEventListener("click", function () {
+            hiddenBoxes[i].style.display = "inline-block";
+            document.body.style.backgroundColor = "rgba(128,128,128,0.5)";
+            document.body.style.display = "block"
+        });
+        closeBtn[i].addEventListener("click", function () {
+            hiddenBoxes[i].style.display = "none";
+            document.body.style.backgroundColor = "white";
+        });
+        input.addEventListener("keyup", function (e) {
+            if (e.key === 'Enter') {
+                var temp = names[i].innerHTML;
+                if (temp == input.value){
+                    hiddenBoxes[i].style.display = "inline-block";
+                    document.body.style.backgroundColor = "rgba(128,128,128,0.5)";
+                    document.body.style.display = "block"
+                    console.log(1);
+                }
+            }
+        });
+    }
+</script>

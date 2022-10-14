@@ -1,0 +1,11 @@
+C:\Users\user\source\repos\GlobaxIT\TestApi\bin\Debug\TestApi.exe.config
+C:\Users\user\source\repos\GlobaxIT\TestApi\bin\Debug\TestApi.exe
+C:\Users\user\source\repos\GlobaxIT\TestApi\bin\Debug\TestApi.pdb
+C:\Users\user\source\repos\GlobaxIT\TestApi\obj\Debug\TestApi.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\GlobaxIT\TestApi\obj\Debug\TestApi.csproj.SuggestedBindingRedirects.cache
+C:\Users\user\source\repos\GlobaxIT\TestApi\obj\Debug\TestApi.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\GlobaxIT\TestApi\obj\Debug\TestApi.exe
+C:\Users\user\source\repos\GlobaxIT\TestApi\obj\Debug\TestApi.pdb
+C:\Users\user\source\repos\GlobaxIT\TestApi\bin\Debug\Newtonsoft.Json.dll
+C:\Users\user\source\repos\GlobaxIT\TestApi\bin\Debug\Newtonsoft.Json.xml
+C:\Users\user\source\repos\GlobaxIT\TestApi\obj\Debug\TestApi.csproj.CopyComplete
